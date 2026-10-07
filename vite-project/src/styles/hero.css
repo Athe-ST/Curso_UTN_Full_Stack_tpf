@@ -1,0 +1,36 @@
+.hero{
+    width: 100%;
+    min-height: 80vh;
+    background-image: linear-gradient(rgba(248, 226, 200, 0.75)) , url("../assets/img/justicia_yellow.png") ;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+     color: var(--text-dark);
+     gap: .4rem;
+}
+
+.hero h1 {
+    text-transform: uppercase;
+    font-size: 3rem;
+}
+
+.hero p{
+    margin-top: 1rem;
+    color: var(--green-600);
+    max-width: 500px;
+    font-size: 1.1rem;
+}
+
+.hero .btn{
+    margin-top: 3rem;
+}
+
+@media (max-width: 768px) {
+    .hero h1{
+        font-size: 2.2rem;
+    }
+}

@@ -1,0 +1,57 @@
+
+
+.main-section{
+    max-width: var(--max-width);
+    margin: 0 auto; /* acomoda tds los elementos al medio */
+    padding: 1rem 2rem 3rem;
+}
+
+.cards-grid{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    
+}
+
+.card{
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    flex: 1 1 280px;
+    border-radius: 10px;
+    background-color: var(--white); 
+    box-shadow: 0 4px rgba(0, 0, 0, 0.08);
+    max-width: 320px;
+}
+
+.card img{
+    height: 200px;
+    width: 100%;
+    object-fit: cover;
+}
+
+.card-body{
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    text-align: justify;
+    gap: 0.9rem;
+    flex: 1;
+}
+
+.card-body h3{
+    color: var(--text-dark);
+    text-align: center;
+}
+
+.card-body p{
+    flex: 1; /* Empuja el btn hacia el fondo aunque todos los textos tengan distinto largo*/
+    font-size: 0.95rem;
+}
+
+.card-body .btn {
+    text-align: center;
+    width: 50%; /* Ocupará la mitad del ancho */
+    margin: 0 auto; /* Necesario para centrarlo si el padre es flex columna y el ancho no es 100% */
+}

@@ -1,0 +1,236 @@
+*, *::before, *::after {
+ box-sizing: border-box;
+margin: 0;	
+ padding: 0; }
+
+
+
+ :root {
+    /* --- Color Principal (Verde barra de navegación) --- */
+    --green-500: rgb(43, 56, 47);
+    --green-600: rgb(34, 45, 38); /* Un verde más oscuro (para hover o contrastes fuertes) */
+    --green-400: rgb(58, 76, 64); /* Un verde un poco más claro */
+
+    /* --- Color de Fondo --- */
+    --bg-cream: rgb(212, 195, 182);
+    --bg-cream-light: rgb(228, 215, 205); /* Versión más clara para tarjetas o secciones */
+    --bg-cream-dark: rgb(194, 176, 163);  /* Versión más oscura para bordes o profundidad */
+
+    /* --- Neutros y Textos --- */
+    --text-dark: rgb(30, 30, 30);      /* Para textos principales muy legibles sobre fondos claros */
+    --text-muted: rgb(100, 95, 90);    /* Para textos secundarios o subtítulos */
+    --white: rgb(255, 255, 255);       /* Blanco puro */
+    --black: rgb(0, 0, 0);             /* Negro puro */
+
+    /* --- Colores de Acento (Opcionales para llamadas a la acción o alertas) --- */
+    --accent-gold: rgb(197, 160, 89);  /* Un tono dorado elegante que combina muy bien con verdes y arenas */
+    --error: rgb(180, 60, 60);         /* Para mensajes de error o alertas */
+
+    --max-width: 1400px;
+
+    /* --- Tipografias --- */
+    --font-heading: "Fraunces", serif;
+    --font-body: "Poppins", sans-serif;
+}
+
+.imagen-logo img {
+  width: 180px;       
+  height: auto;     
+  display: block;     
+}
+
+/* --- Botón Flotante de WhatsApp --- */
+.whatsapp-float {
+    position: fixed;
+    bottom: 25px;
+    right: 25px; /* Posicionado en la esquina inferior derecha */
+    background-color: rgb(37, 211, 102); /* Color oficial de WhatsApp */
+    color: var(--white);
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 32px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    z-index: 1000; /* Asegura que flote por encima de cualquier otro elemento */
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.whatsapp-float:hover {
+    background-color: rgb(30, 180, 87);
+    transform: scale(1.1); /* Efecto de crecimiento suave al pasar el cursor */
+    color: var(--white);
+}
+
+
+body{
+    display: flex;  /* Esto evita que el footer se suba */
+    flex-direction: column;
+    min-height: 100vh;  /* Esto evita que el footer se suba */
+    line-height: 1.6;
+    font-family: var(--font-body);
+    background-color: var(--bg-cream-light);
+    color: var(--text-dark);
+}
+
+h1, h2, h3 {
+    font-family: var(--font-heading);
+}
+
+img{
+/* Ninguna imagen pueda romper el layout ni provocar scroll horizontal */
+    max-width: 100%;
+    display: block;
+}
+
+a{  text-decoration: none;
+     /* Inherit (heredado) - hereda el color del body */
+     color: inherit;
+}
+
+ul{
+    list-style: none;
+}
+
+/* Botón reutilizable */
+
+.btn{
+    font-family: var(--font-body);
+    padding: 0.6rem 1.2rem;
+    border: none;
+    border-radius: 30px;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.btn-primary{
+    color: var(--white);
+    background-color: var(--green-400);
+    transition: transform 0.5s, background-color 0.3s;
+}
+
+.btn-primary:hover{
+    background-color: var(--green-600);
+    transform: translateY(-2px) scale(1.03);
+}
+
+.btn-secondary{
+    color: var(--green-400);
+    background-color: transparent;
+    border: 2px solid var(--green-400);
+}
+
+.btn-secondary:hover{
+    background-color: var(--green-400);
+    color: var(--white);
+}
+
+
+/* Header y Nav */
+header{
+    padding: 1rem 2rem;
+    background-color: var(--green-600);
+}
+
+.navbar{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center ;
+    max-width: var(--max-width);
+    margin: 0 auto;
+    gap: 1rem;
+    color: var(--white);
+}
+
+.navlinks{
+    display: flex;
+    gap: 1rem;
+    font-size: 13px;
+}
+
+.navlinks a{
+    display: flex;
+    gap: 0.4rem;
+    align-items: center;
+    color: var(--white);
+    font-size: 0.95rem;
+    transition: color 0.2s;
+}
+
+.navlinks a:hover{
+    color: var(--bg-cream-light);
+}
+
+
+/* --- Footer ---*/
+footer{
+    text-align: center;
+    padding:  1rem 1rem;
+    margin-top: auto; /* Junto con el flex del body empuja el footer hacia abajo */
+    background-color: var(--green-600);
+    color: var(--white);
+}
+
+.footer-contactos{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    line-height: 26px;
+    font-size: 14px;
+}
+
+.footer-social{
+    padding-top: 10px;
+    font-size: 24px;
+}
+
+.fa-facebook:hover, .fa-instagram:hover {
+    color: var(--bg-cream-light);
+}
+
+.fa-facebook, .fa-instagram {
+    transition: color 0.2s;
+}
+
+.copy{
+    padding-top: 20px;
+    font-weight: 200;
+    font-size: 10px;
+    color: var(--bg-cream-dark);    
+}
+
+/* --- Texto principal de main ---*/
+
+.main-section{
+    max-width: var(--max-width);
+    margin: 0 auto; /* acomoda tds los elementos al medio */
+    padding: 1rem 2rem 3rem;
+    text-align: center;
+}
+
+.page-title{
+    text-align: center;
+    font-size: 1.8rem;
+    margin: 2rem 0;
+    color: var(--text-dark);
+    text-transform: uppercase   
+}
+
+
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column; /* Pone el logo arriba y el menú abajo */
+        align-items: center;    /* Centra ambos elementos horizontalmente */
+        text-align: center;     /* Asegura que los textos internos también se centren */
+    }
+
+    .navlinks {
+        justify-content: center; /* Centra los links del menú si se envuelven */
+        flex-wrap: wrap;     /* Permite que los links bajen de línea si no entran */
+    }
+}
+
